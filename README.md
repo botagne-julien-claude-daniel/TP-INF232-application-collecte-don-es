@@ -3,13 +3,6 @@
 # Application de collecte et d'analyse descriptive des données
 ## TP N°1 — INF232 EC2
 
-**Étudiant :** Julien  
-**Matricule :** 22T4444  
-**Filière :** Informatique  
-**Année académique :** 2025-2026
-
-
-
 ## Description
 
 Application web développée en Python permettant la collecte de données
