@@ -517,4 +517,49 @@ elif "Tableau de bord" in page:
                 plot_bgcolor="#0d0d1a", paper_bgcolor="#0d0d1a",
                 font_color="#b8b6d0", coloraxis_showscale=False,
                 xaxis=dict(gridcolor="rgba(0,0,0,0)"),
-                
+                yaxis=dict(gridcolor="#1e1e35"),
+                margin=dict(t=20)
+            )
+            st.plotly_chart(fig, use_container_width=True)
+
+# ════════════════════════════════════════════════════════════════════════════════
+# PAGE : ANALYSE AVANCÉE
+# ════════════════════════════════════════════════════════════════════════════════
+elif "Analyse avancée" in page:
+    st.markdown('<div class="hero-title" style="font-size:2rem">Analyse avancée</div>', unsafe_allow_html=True)
+    st.markdown('<div class="hero-sub">Corrélations & tendances</div>', unsafe_allow_html=True)
+
+    df = load_data()
+
+    if df.empty:
+        st.info("Aucune donnée disponible.")
+    else:
+        corr = df[["heures_ecran", "heures_reseaux", "satisfaction_num", "stress_numerique"]].corr()
+
+        fig = px.imshow(
+            corr,
+            text_auto=True,
+            color_continuous_scale="Purples",
+            aspect="auto"
+        )
+        fig.update_layout(
+            plot_bgcolor="#0d0d1a",
+            paper_bgcolor="#0d0d1a",
+            font_color="#b8b6d0",
+            margin=dict(t=20)
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
+# ════════════════════════════════════════════════════════════════════════════════
+# PAGE : DONNÉES BRUTES
+# ════════════════════════════════════════════════════════════════════════════════
+elif "Données brutes" in page:
+    st.markdown('<div class="hero-title" style="font-size:2rem">Données brutes</div>', unsafe_allow_html=True)
+    st.markdown('<div class="hero-sub">Vue tabulaire des réponses</div>', unsafe_allow_html=True)
+
+    df = load_data()
+
+    if df.empty:
+        st.info("Aucune donnée disponible.")
+    else:
+        st.dataframe(df, use_container_width=True)
