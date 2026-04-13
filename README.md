@@ -35,5 +35,5 @@ streamlit run app.py
 
 ## Lien de l'application en ligne
 
-[Accéder à l'application](https://LIEN_ICI)
+[Accéder à l'application](https://tp-inf232-application-collecte-don-es-jz2c5jltobz5fkhukjv7s6.streamlit.app/)
 ```
