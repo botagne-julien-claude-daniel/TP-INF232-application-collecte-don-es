@@ -1,6 +1,6 @@
 # TP-INF232-application-collecte-données
 ```
-# Application de collecte et d'analyse descriptive des données
+# Application de collecte et d'analyse descriptive des données(DigiStudy)
 ## TP N°1 — INF232 EC2
 
 ## Description
